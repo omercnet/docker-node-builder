@@ -1,0 +1,7 @@
+FROM node:5-slim
+
+RUN npm install -g bower grunt gulp && \
+    mkdir /usr/src/app
+
+USER node
+WORKDIR /usr/src/app
