@@ -1,7 +1,9 @@
 FROM node:7-slim
 
-RUN npm install -g bower grunt gulp && \
-    mkdir /usr/src/app
+RUN apt-get update && \
+    apt-get install -y git curl && \
+    npm install -g bower grunt gulp && \
+    mkdir /usr/src/app && \
+    rm -rf /var/lib/apt/lists/*
 
-USER node
 WORKDIR /usr/src/app
